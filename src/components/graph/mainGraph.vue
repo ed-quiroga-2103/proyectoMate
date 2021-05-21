@@ -20,15 +20,19 @@ import {getWithExpiry} from "../../util/utilities.js"
 
 
 export default {
-    created(){
-        
 
+    created(){
         this.isLoading = true;
+        
         var token = getWithExpiry('token');
+        
         if (token === null){
             //Sesion expirada, debe ingresar de nuevo
             this.$router.push('/');
 
+        }
+        else{
+            this.$store.commit("changeLogState", "1");
         }
 
     },

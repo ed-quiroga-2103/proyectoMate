@@ -1,10 +1,12 @@
 <template>
   <div :class="{ load: true, fadeout: !isLoading }">
+    <div class = "centered">
     <div class="bg-contrast-custom center-screen font-light-custom">
       LOADING
       <div class="spinner-grow font-light-custom" role="status">
         <span class="sr-only"></span>
       </div>
+    </div>
     </div>
   </div>
 </template>
@@ -58,5 +60,14 @@ export default {
       visibility: hidden;
     }
   }
+
+  .centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
 
 </style>

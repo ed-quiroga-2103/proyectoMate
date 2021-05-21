@@ -25,6 +25,9 @@ export default {
             this.$router.push('/');
 
         }
+        else{
+            this.$store.commit("changeLogState", "1");
+        }
 
     },
     mounted(){

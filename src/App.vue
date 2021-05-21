@@ -2,7 +2,7 @@
   <div>
     <NavBar/>
     <div id="app" class="">
-      <router-view/>
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -15,6 +15,10 @@ export default {
   name: 'App',
   components: {
     NavBar
+  },
+  data(){
+    return {
+    }
   }
 }
 </script>

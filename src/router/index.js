@@ -6,6 +6,8 @@ import Login from '../views/Login.vue'
 import topicGraph from '../components/graph/topicGraph.vue'
 import contact from '../views/Contact.vue'
 import evaluation from '../components/evaluation/evaluation.vue'
+import Registration from '../views/Registration.vue'
+
 
 Vue.use(VueRouter)
 
@@ -33,6 +35,11 @@ const routes = [{
         path: '/login',
         name: 'Login',
         component: Login
+    },
+    {
+        path: '/registration',
+        name: 'Registration',
+        component: Registration
     },
     {
         path: '/topicGraph',
