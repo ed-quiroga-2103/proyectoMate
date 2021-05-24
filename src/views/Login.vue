@@ -12,7 +12,7 @@
         </div>
         <div class="mb-3 form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label font-light-custom" for="exampleCheck1">Check me out</label>
+          <label class="form-check-label font-light-custom" for="exampleCheck1">Remember Username</label>
         </div>
         <button type="submit" class="btn btn-primary">Log In!</button>
     </form>
@@ -117,14 +117,19 @@ export default {
 <style>
 
 .contain {
-    width: 35%;
+    min-width: 360px;
+    width: 35%;   
 }
 .mainbody{
-  position: static;
-  height: 95vh;
+  height: 100%;
+  width: 100%;
+  clear: both;
+  overflow: auto;
+  background: royalblue;
 }
 .rcorners{
  border-radius: 15px;
 }
+
 
 </style>

@@ -21,11 +21,11 @@ import {getWithExpiry} from "../../util/utilities.js"
 
 export default {
 
-    created(){
+    async created(){
         this.isLoading = true;
         
-        var token = getWithExpiry('token');
-        
+        var token = await getWithExpiry('token');
+        console.log("Token: ", token);
         if (token === null){
             //Sesion expirada, debe ingresar de nuevo
             this.$router.push('/');
