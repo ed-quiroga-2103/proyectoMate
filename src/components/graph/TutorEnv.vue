@@ -9,7 +9,7 @@
 import mainGraph from './mainGraph.vue'
 
 export default {
-  name: 'HelloWorld',
+  name: 'TutorEnv',
   props: {
     msg: String
   },

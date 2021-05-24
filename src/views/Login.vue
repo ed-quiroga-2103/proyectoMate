@@ -12,9 +12,9 @@
         </div>
         <div class="mb-3 form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label font-light-custom" for="exampleCheck1">Check me out</label>
+          <label class="form-check-label font-light-custom" for="exampleCheck1">Remember Username</label>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Log In!</button>
     </form>
   </div>
 </template>
@@ -28,6 +28,12 @@ var axios = require('axios');
 import {setWithExpiry} from "../util/utilities.js"
 
 export default {
+    mounted(){
+      this.$store.commit("changeLogState", "0");
+
+      console.log(this.$store.state.logged);
+
+    },
     data() {
         return {
               
@@ -68,30 +74,37 @@ export default {
 
                 if(response.data.data != "Wrong password"){
 
-                    var data = response.data.data;
-                    var info = response.data.info;
-                    var user = response.data.user;
-                  
-                    var dataStr = JSON.stringify(data);
-                    var infoStr = JSON.stringify(info);
-                    var userStr = JSON.stringify(user);
+                    var status = response.data.status;
 
-
-                    console.log(data);
-                    console.log(info);
-                    console.log(user);
-                   
-                   
-                    localStorage.setItem('mainGraph', dataStr);
-                    localStorage.setItem('info', infoStr);
-                    localStorage.setItem('currentGraphId', 'main');
-                    localStorage.setItem('currentGraph', dataStr);
-                    localStorage.setItem('user', userStr);
-
-
-                    this.$router.push('/home');
+                    if(!status){
+                      console.log("Wrong user or password");
+                    }
+                    else{
+                      var data = response.data.data;
+                      var info = response.data.info;
+                      var user = response.data.user;
                     
+                      var dataStr = JSON.stringify(data);
+                      var infoStr = JSON.stringify(info);
+                      var userStr = JSON.stringify(user);
 
+
+                      console.log(data);
+                      console.log(info);
+                      console.log(user);
+                    
+                    
+                      localStorage.setItem('mainGraph', dataStr);
+                      localStorage.setItem('info', infoStr);
+                      localStorage.setItem('currentGraphId', 'main');
+                      localStorage.setItem('currentGraph', dataStr);
+                      localStorage.setItem('user', userStr);
+
+                      this.$store.commit("changeLogState", "1");
+
+                      this.$router.push('/home');
+                      
+                    }
                 }
             });
 
@@ -104,15 +117,19 @@ export default {
 <style>
 
 .contain {
-    width: 35%;
+    min-width: 360px;
+    width: 35%;   
 }
 .mainbody{
-  position: static;
-  height: 95vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+  clear: both;
+  overflow: auto;
+  background: royalblue;
 }
 .rcorners{
  border-radius: 15px;
 }
+
 
 </style>

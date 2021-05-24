@@ -1,32 +1,49 @@
 <template>
-<div id= "evaluation" class="bg-contrast-custom center-screen mainbody">
-    <div class="bg-secondary-custom question-window">
-        <div id = "questions" class="center-screen ">
-            <div>
-                <h1>{{this.currentQuestion.question}}</h1>
-                <div v-for="item in this.currentQuestion.equations" :key="item" v-katex:auto="{ colorIsTextColor: false}" class="katex">
-                    {{item}}
-                </div>
-            </div>
-        </div>
 
-        <div id = 'options' class="list-group">
-            <div class="form-check content-checkbox">
-                <label v-for="(item, index) in this.currentQuestion.options" :key="index" :ref="'radio-'+index" class="content-checkbox"  @change="inputAnswer(index)">
-                    <input name = "radiogroup" type="radio" v-model="selected[index]"/> {{item.text}} - {{item.equation}}
-                </label>
+<div class="quiz-container center" id="quiz">
+            <div class="quiz-header">
+                <h2 id="question">Question text</h2>
+                <ul>
+                    <li>
+                        <input
+                            type="radio"
+                            id="a"
+                            name="answer"
+                            class="answer"
+                        />
+                        <label id="a_text" for="a">Question</label>
+                    </li>
+                    <li>
+                        <input
+                            type="radio"
+                            id="b"
+                            name="answer"
+                            class="answer"
+                        />
+                        <label id="b_text" for="b">Question</label>
+                    </li>
+                    <li>
+                        <input
+                            type="radio"
+                            id="c"
+                            name="answer"
+                            class="answer"
+                        />
+                        <label id="c_text" for="c">Question</label>
+                    </li>
+                    <li>
+                        <input
+                            type="radio"
+                            id="d"
+                            name="answer"
+                            class="answer"
+                        />
+                        <label id="d_text" for="d">Question</label>
+                    </li>
+                </ul>
             </div>
+            <button id="submit">Submit</button>
         </div>
-        
-    
-    </div>
-        <div class = "button-bar">
-            <button type="button" class="btn btn-primary left" v-on:click="prevQuestion">Previous</button>
-            <button type="button" class="btn btn-primary right" v-on:click="nextQuestion">Next</button>
-        </div>
-    
-</div>
-
 
 </template>
 
@@ -260,53 +277,72 @@ export default {
 </script>
 
 <style scoped>
-.center-screen {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-}
-.content-checkbox {
-               text-align: left;
-               display: block;
-               padding: 10px;
-            }
-
-.mainbody{
-  position: static;
-  height: 95vh;
-  width: 100%;
+* {
+    box-sizing: border-box;
 }
 
-h1 {
-    font-size: 1.7rem;
+body {
+    background-color: #b8c6db;
+    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    min-height: 100vh;
 }
 
-.mainbody h1, .mainbody p, .mainbody label{
-    color: #000
+.quiz-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+    overflow: hidden;
+    width: 600px;
+    max-width: 100%;
 }
-.katex { 
-    font-size: 1.2rem !important; 
-} 
 
-.button-bar{
+.quiz-header {
+    padding: 4rem;
+}
+
+h2 {
+    padding: 1rem;
+    text-align: center;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+ul li label {
+    cursor: pointer;
+}
+
+button {
+    background-color: #8e44ad;
+    border: none;
+    color: white;
+    cursor: pointer;
     display: block;
-    width: 50%;
-    margin-top: 1rem;
+    font-family: inherit;
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 1.3rem;
+}
 
+button:hover {
+    background-color: #732d91;
 }
-.right{
-    position: static;
-    float: right;
-}
-.left{
-    position: static;
-    float: left;
-}
-.question-window{
-    width: 50%;
-    height: 50%;
+
+button:focus {
+    background-color: #5e3370;
+    outline: none;
 }
 </style>

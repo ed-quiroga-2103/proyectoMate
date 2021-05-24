@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="">
     <NavBar/>
-    <div id="app" class="">
-      <router-view/>
+    <div id="app" class="bg-dark-custom">
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -15,6 +15,10 @@ export default {
   name: 'App',
   components: {
     NavBar
+  },
+  data(){
+    return {
+    }
   }
 }
 </script>
@@ -22,5 +26,9 @@ export default {
 
 <style>
 @import './assets/css/main.css';
+
+body{
+  background-color: #283747;
+}
 
 </style>
