@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-    <NavBar/>
+  <div>
+    <NavBar class=""/>
     <div id="app" class="bg-dark-custom">
       <router-view></router-view>
     </div>
@@ -27,8 +27,12 @@ export default {
 <style>
 @import './assets/css/main.css';
 
-body{
+html, body{
   background-color: #283747;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+
 }
 
 </style>

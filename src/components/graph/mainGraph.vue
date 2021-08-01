@@ -249,7 +249,11 @@ export default {
     }
 
 }
+
+//STYLE CAN NOT BE SCOPED
+
 </script>
+
 
 <style>
 canvas{

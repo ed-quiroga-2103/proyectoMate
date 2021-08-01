@@ -1,6 +1,6 @@
 <template>
 <div id= "evaluation" class="bg-contrast-custom center-screen mainbody">
-    <div class="bg-secondary-custom question-window">
+    <div class="bg-secondary-custom question-window rcorners">
         <div id = "questions" class="center-screen ">
             <div>
                 <h1>{{this.currentQuestion.question}}</h1>
@@ -261,34 +261,37 @@ export default {
 
 <style scoped>
 .center-screen {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
 }
 .content-checkbox {
-               text-align: left;
-               display: block;
-               padding: 10px;
-            }
+    text-align: left;
+    display: block;
+    padding: 5px;
+}
 
 .mainbody{
-  position: static;
-  height: 95vh;
-  width: 100%;
+    position: absolute;
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
 }
 
 h1 {
-    font-size: 1.7rem;
+    font-size: min(1.5rem,4.5vw);
 }
 
 .mainbody h1, .mainbody p, .mainbody label{
     color: #000
 }
 .katex { 
-    font-size: 1.2rem !important; 
+    font-size: min(1.2rem, 3.5vw) !important; 
 } 
 
 .button-bar{
@@ -307,6 +310,10 @@ h1 {
 }
 .question-window{
     width: 50%;
-    height: 50%;
+    display: flex;  
+    flex-wrap: wrap;
+    padding: 1%;
 }
+
+
 </style>

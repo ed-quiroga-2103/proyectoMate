@@ -25,3 +25,7 @@
 .font-light-custom {
     color: #f3f3f3
 }
+
+.rcorners {
+    border-radius: 15px;
+}

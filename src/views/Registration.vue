@@ -1,8 +1,8 @@
 <template>
-    <div class="bg-dark-custom mainbody">
+    <div class="bg-dark-custom mainbody center-screen">
         
         
-        <form v-on:submit.prevent="onClick" class="contain mx-auto px-5 py-5 bg-contrast-custom position-absolute top-50 start-50 translate-middle font-light-custom rcorners">
+        <form v-on:submit.prevent="onClick" class="contain px-5 bg-contrast-custom font-light-custom rcorners">
             <div>
                 <h3 class="form-label font-light-custom">Registration</h3>
             </div>
@@ -94,16 +94,34 @@ export default {
 <style scoped>
 
 .contain {
-    width: 35%;
+  min-width: 360px;
+  width: 35%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  display: flex;  
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  text-align: left;
 }
 .mainbody{
   position: static;
-  height: 95vh;
+  height: 100%;
   
 }
-.rcorners{
- border-radius: 15px;
+
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 4%;
+  margin-bottom: 4%;
 }
+
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */

@@ -57,7 +57,6 @@ export default {
 
 <style scoped>
         
-</style>>
 * {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

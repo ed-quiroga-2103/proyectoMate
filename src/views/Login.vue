@@ -1,6 +1,7 @@
 <template>
-    <div class="bg-dark-custom mainbody">
-      <form v-on:submit.prevent="onClick" class="contain mx-auto px-5 py-5 bg-contrast-custom position-absolute top-50 start-50 translate-middle font-light-custom rcorners">
+    <div class="bg-dark-custom mainbody center-screen">
+      <!-- contain mx-auto px-5 py-5 bg-contrast-custom position-absolute top-50 start-50 translate-middle font-light-custom rcorners -->
+      <form v-on:submit.prevent="onClick" class="contain px-4 bg-contrast-custom font-light-custom rcorners">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label font-light-custom">Email address</label>
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -114,22 +115,32 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .contain {
-    min-width: 360px;
-    width: 35%;   
+  min-width: 360px;
+  width: 35%;
+  padding-top: 3%;
+  padding-bottom: 5%;
+  display: flex;  
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
 }
 .mainbody{
   height: 100%;
   width: 100%;
-  clear: both;
-  overflow: auto;
-  background: royalblue;
-}
-.rcorners{
- border-radius: 15px;
 }
 
+
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10%;
+}
 
 </style>

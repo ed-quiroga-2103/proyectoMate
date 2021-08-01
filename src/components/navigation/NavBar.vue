@@ -1,13 +1,13 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-contrast-custom nav-height sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-contrast-custom nav-height">
         <div class="container-fluid">
-            <a class="navbar-brand">Instituto Tecnológico de Costa Rica</a>
+            <a class="navbar-brand navbar-brand-font">Instituto Tecnológico de Costa Rica</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div v-if="this.$store.state.logged" class="navbar-nav">
-                <div class="navbar-nav">
+                <div class="navbar-nav padded">
                     <router-link class="nav-link" active-class="active" to="/home" v-on:click="onClickHome">Home</router-link>
                     <router-link class="nav-link" active-class="active" to="/about">About</router-link>
                     <router-link class="nav-link" active-class="active" to="/contact">Contact</router-link>
@@ -61,13 +61,16 @@ export default {
 
 .nav-height{
     max-width: 100%;
-    clear: both;
-    overflow: hidden;
+    text-align: center;
+    
 }
 
 .padR{
     margin-right: 10px;
 }
 
+.navbar-brand-font{
+    font-size: min(1.25rem, 4.5vw);
+}
 
 </style>

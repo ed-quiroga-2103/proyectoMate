@@ -20,11 +20,6 @@ export default {
 
 <style scoped>
 
-.mainbody{
-  position: absolute;
-  height: 95vh;
-  width: 100vw;
-}
 
 .center-screen {
   display: flex;
